@@ -5,13 +5,18 @@ Load the data in your instance and then use the sample code in https://github.co
 (You will also need to download the InterSystems IRIS JDBC driver from maven central)
 
 These steps are written for instances running in the Google Cloud Platform
-1) check out the IRIS shell
-	a) type "iris session"   username: _SYSTEM  password: SYS
-		(you will be prompted to change your password, don't forget to write it down for later)
-		c. Then change password and write it down for later
-		d. Do something in session?
-		e. halt
-	9. cd ~/
+
+1) check out the IRIS CLI - which gives you access to all classes and data
+	iris session   
+		    initial credentials: username: _SYSTEM  password: SYS
+	    
+	set a="persistence rules!"
+	write a
+	
+	 halt
+
+
+
 		a. My scripts assume that everything happens relative to the users home directory
 	10. git clone http://github.com/intersystems/Samples-Stock-Data
 		a. Enter github username and password (will go away when public)
