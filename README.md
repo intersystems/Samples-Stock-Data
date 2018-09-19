@@ -5,6 +5,7 @@ This repository contains sample stock data and the scripts to load it into your 
 LOADING DATA: These steps are written for instances running in the Google Cloud Platform
 
 1) check out the IRIS CLI - which gives you access to all classes and data
+
 	iris session   
 		    (initial credentials: username: _SYSTEM  password: SYS)
 	    
