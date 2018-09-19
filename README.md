@@ -35,34 +35,45 @@ LOADING DATA: These steps are written for instances running in the Google Cloud 
                
 
 
-
+======
 GET GOING IN JAVA - in your IDE
 
 Use the sample code from Github: https://github.com/intersystems/stock-trading-with-java-isc1128
 (You will also need to download the InterSystems IRIS JDBC driver from maven central)
 
 1) Get connected from your IDE
+
      Start a new Java Project 
+     
      add the file: jdbcplaystocksTask1.java
+     
      plug in your JDBC string and credentials in lines 9-11
+     
      run your code
      
  2) Try playing the stock market
+ 
      add the file: jdbcplaystocksTask5.java
+     
      plug in your JDBC string and credentials in lines 17-19
+     
      run your code
+     
           build a portfolio and make some money...
      
  3) Try our Native API - with this you'll be able to create your own fast data structures, and access many built-in functions
  
      add the file: nativeplaystocksTask5.java
+     
      add the directory
+     
      plug in your JDBC string and credentials in lines 21-23
+     
      run your code
           build a portfolio and make some money...
  
- 
- Take a look at the data - from the IRIS shell (database user)
+ ======
+ TAKE A LOOK AT THE DATA - from the IRIS shell (database user)
  
 
         COS zn "USER"
