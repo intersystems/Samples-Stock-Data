@@ -19,11 +19,11 @@
 # get passwd without echoing to terminal
 echo -n "PASSWORD: "; stty -echo; read passwd; stty echo; echo
 
-sed -i -r "s|PASSWORD|$passwd|" ~/ls-gcp-marketplace/load_data.script
+sed -i -r "s|PASSWORD|$passwd|" ~/Samples-Stock-Data/load_data.script
 echo "about to execute load-data.sh"
 cat ~/ls-gcp-marketplace/load_data.script
 
 docker exec iris mkdir -p /tmp/irisupdate
-docker cp ~/ls-gcp-marketplace/load_data.script iris:/tmp/irisupdate/load_data.script
-docker cp ~/ls-gcp-marketplace/load_data.sh iris:/tmp/irisupdate/load_data.sh
+docker cp ~/Samples-Stock-Data/load_data.script iris:/tmp/irisupdate/load_data.script
+docker cp ~/Samples-Stock-Data/load_data.sh iris:/tmp/irisupdate/load_data.sh
 docker exec iris /tmp/irisupdate/load_data.sh

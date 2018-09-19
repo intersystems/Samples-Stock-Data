@@ -18,6 +18,7 @@
 
 # load Stock Trading Data into iris container
 echo "Installing Stock Trading with Java data..."
+cd ~/
 git clone http://github.com/intersystems/ls-iris-java-exp
 
 # copy files into iris container in /tmp/irissys directory
