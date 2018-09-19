@@ -1,19 +1,13 @@
 # Samples-Stock-Data
-This repo contains the code to import sample stock data into your InterSystems IRIS instance
+This repository contains sample stock data and the scripts to load it into your InterSystems IRIS instance.
 
-Draft of steps to execute
+Load the data in your instance and then use the sample code in https://github.com/intersystems/stock-trading-with-java-isc1128
+(You will also need to download the InterSystems IRIS JDBC driver from maven central)
 
-	1. Go to Marketplace
-	2. Launch IRIS Instance
-	3. Click ssh button
-	4. Type iris info
-	5. Log out
-	6. Ssh again
-	7. iris info
-		a. Make sure it is status: "running"
-	8. iris session
-		a. username: _SYSTEM
-		b. password: SYS
+These steps are written for instances running in the Google Cloud Platform
+1) check out the IRIS shell
+	a) type "iris session"   username: _SYSTEM  password: SYS
+		(you will be prompted to change your password, don't forget to write it down for later)
 		c. Then change password and write it down for later
 		d. Do something in session?
 		e. halt
