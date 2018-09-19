@@ -20,5 +20,5 @@
 export myip="$(dig +short myip.opendns.com @resolver1.opendns.com)"
 # print out the local connection string and management portal address
 echo "The InterSystems IRIS JDBC connection string is in the format jdbc:IRIS//<external IP address>:51773/<DB Namespace>"
-echo "Your current JDBC connection string is: jdbc:IRIS//$myip:51773/USER"
+echo "Your current JDBC connection string is: jdbc:IRIS://$myip:51773/USER"
 echo "Your System Management Portal is available at http://$myip:52773/csp/sys/utilhome.csp"
