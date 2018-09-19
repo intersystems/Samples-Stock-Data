@@ -20,19 +20,23 @@ Draft of steps to execute
 	9. cd ~/
 		a. My scripts assume that everything happens relative to the users home directory
 	10. git clone http://github.com/intersystems/Samples-Stock-Data
-		a. enter dfoster67 and pwd
+		a. Enter github username and password (will go away when public)
 		b. chmod 777 Samples-Stock-Data/*.sh
 		c. (b should go away) https://stackoverflow.com/questions/21691202/how-to-create-file-execute-mode-permissions-in-git-on-windows 
 	11. ./Samples-Stock-Data/load_java_data.sh
-		a. Enter the new password set in 8c above
-	12. ./Samples-Stock-Data/get_connectioon_strings.sh
+		a. Enter github username and password (will go away when public)
+		b. Enter the new password set in 8c above
+	12. ./Samples-Stock-Data/get_connection_strings.sh
 		a. This shows JDBC connection string and management portal URL
 	13. iris session
-		a. username: _SYSTEM
-		b. password: <new password from 8a above>
-	14. zn "USER"
+		a. username: sqluser
+		b. password: sqluser
+		c. Enter new password twice and don't foget it
+	14. COS zn "USER"
 		a. the stock data is loaded into the USER namespace as that is how Java Play uses it
 	15. set selectmode=display
 		a. Helps with date display in next step
 	16. select top 10 * from demo.stock where transdate = '8/12/2016' order by stockclose desc
-		a. This same code could be entered in the SQL editor in the Management Portal
+		a. You can do more if you want
+		b. q
+		c. This same code could be entered in the SQL editor in the Management Portal
