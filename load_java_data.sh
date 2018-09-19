@@ -30,4 +30,14 @@ docker cp ~/ls-iris-java-exp/StocksUtil.xml iris:/tmp/irisupdate/StocksUtil.xml
 
 # update environment file to add JAVA_HOME and CLASSPATH
 echo "Creating iris session to load data"
-iris session
+# get passwd without echoing to terminal
+echo -n "Enter updated _SYSTEM PASSWORD: "; stty -echo; read passwd; stty echo; echo
+
+sed -i -r "s|PASSWORD|$passwd|" ~/Samples-Stock-Data/load_data.script
+echo "about to execute load-data.sh"
+# cat ~/Samples-Stock-Data/load_data.script
+
+docker exec iris mkdir -p /tmp/irisupdate
+docker cp ~/Samples-Stock-Data/load_data.script iris:/tmp/irisupdate/load_data.script
+docker cp ~/Samples-Stock-Data/load_data.sh iris:/tmp/irisupdate/load_data.sh
+docker exec iris /tmp/irisupdate/load_data.sh
