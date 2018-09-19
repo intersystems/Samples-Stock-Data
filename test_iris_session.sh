@@ -21,7 +21,7 @@ echo -n "PASSWORD: "; stty -echo; read passwd; stty echo; echo
 
 sed -i -r "s|PASSWORD|$passwd|" ~/Samples-Stock-Data/load_data.script
 echo "about to execute load-data.sh"
-cat ~/ls-gcp-marketplace/load_data.script
+cat ~/Samples-Stock-Data/load_data.script
 
 docker exec iris mkdir -p /tmp/irisupdate
 docker cp ~/Samples-Stock-Data/load_data.script iris:/tmp/irisupdate/load_data.script

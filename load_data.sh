@@ -15,5 +15,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-iris session iris < load_data.script
+iris session iris < /tmp/irisupdate/load_data.script
 
