@@ -10,6 +10,7 @@ LOADING DATA: These steps are written for instances running in the Google Cloud 
 		    (initial credentials: username: _SYSTEM  password: SYS)
 	    
 	set a="persistence rules!"
+	
 	write a
 	
 	halt
