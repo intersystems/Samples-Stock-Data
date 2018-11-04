@@ -3,5 +3,6 @@ PASSWORD
 zn "USER"
 do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/DemoStockCls.xml","cdk")
 do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/StocksUtil.xml","cdk")
+do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/TradeAndPersonForHibernate.xml","cdk")
 do ##class(Demo.Stock).LoadData()
 halt
