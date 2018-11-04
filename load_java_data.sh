@@ -27,6 +27,7 @@ docker exec iris mkdir -p /tmp/irisupdate
 docker cp ~/ls-iris-java-exp/all_stocks_1yr.csv iris:/tmp/irisupdate/all_stocks_1yr.csv
 docker cp ~/ls-iris-java-exp/DemoStockCls.xml iris:/tmp/irisupdate/DemoStockCls.xml
 docker cp ~/ls-iris-java-exp/StocksUtil.xml iris:/tmp/irisupdate/StocksUtil.xml 
+docker cp ~/ls-iris-java-exp/StocksUtil.xml iris:/tmp/irisupdate/TradeAndPersonForHibernate.xml
 
 # update environment file to add JAVA_HOME and CLASSPATH
 echo "Creating iris session to load data"
