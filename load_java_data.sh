@@ -17,17 +17,17 @@
 #
 
 # load Stock Trading Data into iris container
-echo "Installing Stock Trading with Java data..."
+echo "Installing Stock Trading data..."
 cd ~/
 git clone http://github.com/intersystems/ls-iris-java-exp
 
-# copy files into iris container in /tmp/irissys directory
+# copy files into try-iris container in /tmp/irissys directory
 echo "Copying ls-iris-java files into /tmp/irissys directory..."
-docker exec iris mkdir -p /tmp/irisupdate
-docker cp ~/ls-iris-java-exp/all_stocks_1yr.csv iris:/tmp/irisupdate/all_stocks_1yr.csv
-docker cp ~/ls-iris-java-exp/DemoStockCls.xml iris:/tmp/irisupdate/DemoStockCls.xml
-docker cp ~/ls-iris-java-exp/StocksUtil.xml iris:/tmp/irisupdate/StocksUtil.xml 
-docker cp ~/ls-iris-java-exp/TradeAndPersonForHibernate.xml iris:/tmp/irisupdate/TradeAndPersonForHibernate.xml
+sudo docker exec try-iris mkdir -p /tmp/irisupdate
+sudo docker cp ~/ls-iris-java-exp/all_stocks_1yr.csv try-iris:/tmp/irisupdate/all_stocks_1yr.csv
+sudo docker cp ~/ls-iris-java-exp/DemoStockCls.xml try-iris:/tmp/irisupdate/DemoStockCls.xml
+sudo docker cp ~/ls-iris-java-exp/StocksUtil.xml try-iris:/tmp/irisupdate/StocksUtil.xml 
+sudo docker cp ~/ls-iris-java-exp/TradeAndPersonForHibernate.xml try-iris:/tmp/irisupdate/TradeAndPersonForHibernate.xml
 
 # update environment file to add JAVA_HOME and CLASSPATH
 echo "Creating iris session to load data"
@@ -38,7 +38,6 @@ sed -i -r "s|PASSWORD|$passwd|" ~/Samples-Stock-Data/load_data.script
 echo "about to execute load-data.sh"
 # cat ~/Samples-Stock-Data/load_data.script
 
-docker exec iris mkdir -p /tmp/irisupdate
-docker cp ~/Samples-Stock-Data/load_data.script iris:/tmp/irisupdate/load_data.script
-docker cp ~/Samples-Stock-Data/load_data.sh iris:/tmp/irisupdate/load_data.sh
-docker exec iris /tmp/irisupdate/load_data.sh
+sudo docker cp ~/Samples-Stock-Data/load_data.script try-iris:/tmp/irisupdate/load_data.script
+sudo docker cp ~/Samples-Stock-Data/load_data.sh try-iris:/tmp/irisupdate/load_data.sh
+sudo docker exec try-iris /tmp/irisupdate/load_data.sh
