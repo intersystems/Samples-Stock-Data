@@ -15,29 +15,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 # load Stock Trading Data into iris container
 echo "Installing Stock Trading data..."
-cd ~/
-git clone http://github.com/intersystems/ls-iris-java-exp
+# get directory that we are running in to use as base directory
+basedir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+targetdir="/tmp/irisupdate"
+containername="try-iris"
+echo "copy from "$basedir"/. to "$containername":"$targetdir"/"
 
-# copy files into try-iris container in /tmp/irissys directory
-echo "Copying ls-iris-java files into /tmp/irissys directory..."
-sudo docker exec try-iris mkdir -p /tmp/irisupdate
-sudo docker cp ~/ls-iris-java-exp/all_stocks_1yr.csv try-iris:/tmp/irisupdate/all_stocks_1yr.csv
-sudo docker cp ~/ls-iris-java-exp/DemoStockCls.xml try-iris:/tmp/irisupdate/DemoStockCls.xml
-sudo docker cp ~/ls-iris-java-exp/StocksUtil.xml try-iris:/tmp/irisupdate/StocksUtil.xml 
-sudo docker cp ~/ls-iris-java-exp/TradeAndPersonForHibernate.xml try-iris:/tmp/irisupdate/TradeAndPersonForHibernate.xml
 
 # update environment file to add JAVA_HOME and CLASSPATH
 echo "Creating iris session to load data"
 # get passwd without echoing to terminal
 echo -n "Enter updated _SYSTEM PASSWORD: "; stty -echo; read passwd; stty echo; echo
 
-sed -i -r "s|PASSWORD|$passwd|" ~/Samples-Stock-Data/load_data.script
+sed -i -r "s|PASSWORD|$passwd|" $basedir/data/load_data.script
 echo "about to execute load-data.sh"
 # cat ~/Samples-Stock-Data/load_data.script
-
-sudo docker cp ~/Samples-Stock-Data/load_data.script try-iris:/tmp/irisupdate/load_data.script
-sudo docker cp ~/Samples-Stock-Data/load_data.sh try-iris:/tmp/irisupdate/load_data.sh
-sudo docker exec try-iris /tmp/irisupdate/load_data.sh
+# copy files into try-iris container in /tmp/irissys directory
+sudo docker exec $containername mkdir -p $targetdir
+sudo docker cp $basedir/data/. $containername:$targetdir/
+sudo docker exec $containername $targetdir/load_data.sh
