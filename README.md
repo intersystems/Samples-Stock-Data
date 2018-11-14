@@ -1,35 +1,37 @@
 # Samples-Stock-Data
 This repository contains sample stock data and the scripts to load it into your InterSystems IRIS instance.
 
+## GET CONNECTED: Reset your password and get connection information
+
+1) Reset the default passwords
+
+	`iris password`
+		This will ask you for your new password, and will reset the password for all default user accounts
+
+2) Check the status of your iris instance
+
+	`iris status`
+		This will show the current status of the InterSystems IRIS instance
+		
+3) Get your connection information
+
+	`iris info`
+		This will show the external ip address and ports needed to make connections to InterSystems IRIS
+
 ## LOADING DATA: These steps are written for instances running in the Google Cloud Platform
 
-1) check out the IRIS CLI - which gives you access to all classes and data
-
-	`iris session`   
-		    (initial credentials: username: _SYSTEM  password: SYS)
-	    
-	`set a="persistence rules!"`
-	
-	`write a`
-	
-	`halt`
-	
-2) Get the sample data and scripts
+1) Get the sample data and scripts
 	
 	git clone http://github.com/intersystems/Samples-Stock-Data
 		
 	
-	`./Samples-Stock-Data/load_java_data.sh`
+	`./Samples-Stock-Data/load.sh`
 	
+OR --- if the new code works
 
-3) Set up access from your IDE - JDBC connection and database account
+	`iris load https://github.com/intersystems/Samples-Stock-Data`
 	
-	`./Samples-Stock-Data/get_connection_strings.sh`
-		(Gives you the JDBC connection string)
-	
-	`iris session`   
-		    (initial credentials: username: sqluser  password: sqluser)
-               
+              
 ---
 ## GET GOING IN JAVA - in your IDE
 
