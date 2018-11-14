@@ -15,6 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+#
 # load Stock Trading Data into iris container
 echo "Installing Stock Trading data..."
 # get directory that we are running in to use as base directory
