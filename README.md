@@ -29,13 +29,13 @@ This repository contains sample stock data and the scripts to load it into your 
  
 1) Start a SQL Session  
 
-```
+	```
 	sudo docker exec -it try-iris iris session iris
 	Username: SuperUser
 	Password: <new password>
 	USER>> do $system.SQL.Shell()
 	[SQL]USER>> set selectmode=display
 	[SQL]USER>> select top 10 * from demo.stock where transdate = '8/12/2016' order by stockclose desc
-```
+	```
 
 2) Try other SQL commands
