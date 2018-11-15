@@ -22,22 +22,16 @@ This repository contains sample stock data and the scripts to load it into your 
 
 1) Get the sample data and scripts
 	
-	`git clone http://github.com/intersystems/Samples-Stock-Data`
-	
-	`./Samples-Stock-Data/load.sh`
-
-OR --- if the new code works
-
 	`iris load https://github.com/intersystems/Samples-Stock-Data`
-	
+
 ---
 ## TAKE A LOOK AT THE DATA - from the IRIS shell (database user)
  
 1) Start a SQL Session  
 
 	`sudo docker exec -it try-iris iris session iris`  
-	(username: sqluser to get a SQL Shell)  
-	`[SQL]DB>> COS zn "USER"`  
+	(username: SuperUser)
+	`do $system.SQL.Shell()`
 	`[SQL]USER>> set selectmode=display`  
 	`[SQL]USER>> select top 10 * from demo.stock where transdate = '8/12/2016' order by stockclose desc`  
 		
