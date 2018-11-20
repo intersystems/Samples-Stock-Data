@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25" zv="IRIS for Windows (x86-64) 2018.1.1 (Build 522U)" ts="2018-04-05 15:07:10">
 <Class name="Demo.Stock">
-<Super>%Persistent,%Populate,%XML.Adaptor</Super>
+<Super>%Persistent</Super>
 <TimeChanged>64741,35080.080605</TimeChanged>
 <TimeCreated>64685,57614.490676</TimeCreated>
 
@@ -70,50 +70,14 @@
 				set status = stock.%Save()
 			}
 		} catch sc {
-			WRITE "In Catch block",!
-    		WRITE "error code: ",sc.Code,!
-    		WRITE "error location: ",sc.Location,!
-    		WRITE "error data:",$LISTGET(sc.Data,2),!	
+			write "In Catch block",!
+    		write "error code: ",sc.Code,!
+    		write "error location: ",sc.Location,!
+    		write "error data:",$LISTGET(sc.Data,2),!	
 		}
 		quit status
 ]]></Implementation>
 </Method>
 
-<Storage name="Default">
-<Type>%Library.CacheStorage</Type>
-<DataLocation>^Demo.StockD</DataLocation>
-<DefaultData>StockDefaultData</DefaultData>
-<IdLocation>^Demo.StockD</IdLocation>
-<IndexLocation>^Demo.StockI</IndexLocation>
-<StreamLocation>^Demo.StockS</StreamLocation>
-<Data name="StockDefaultData">
-<Structure>listnode</Structure>
-<Subscript/>
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>TransDate</Value>
-</Value>
-<Value name="3">
-<Value>StockOpen</Value>
-</Value>
-<Value name="4">
-<Value>High</Value>
-</Value>
-<Value name="5">
-<Value>Low</Value>
-</Value>
-<Value name="6">
-<Value>StockClose</Value>
-</Value>
-<Value name="7">
-<Value>Volume</Value>
-</Value>
-<Value name="8">
-<Value>Name</Value>
-</Value>
-</Data>
-</Storage>
 </Class>
 </Export>
