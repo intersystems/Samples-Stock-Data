@@ -4,5 +4,5 @@ zn "USER"
 do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/DemoStockCls.xml","cdk")
 do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/StockUtil.xml","cdk")
 do ##class(%SYSTEM.OBJ).Load("/tmp/irisupdate/TradeAndPersonForHibernate.xml","cdk")
-do ##class(Demo.Stock).LoadData()
+do ##class(Demo.Stock).LoadData("/tmp/irisupdate/all_stocks_1yr.csv")
 halt
