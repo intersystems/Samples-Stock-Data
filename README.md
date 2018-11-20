@@ -39,3 +39,5 @@ This repository contains sample stock data and the scripts to load it into your 
 	```
 
 2) Try other SQL commands
+3) Type `q` to exit the SQL Session
+4) Type `h` to exit the iris session
