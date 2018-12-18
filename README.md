@@ -2,6 +2,7 @@
 This repository contains sample stock data and the scripts to load it into your InterSystems IRIS instance.
 
 ## GET CONNECTED: Reset your password and get connection information
+This sample assumes you already have an instance. If you do not yet have one, you can visit: [Direct Access to InterSystems IRIS](https://learning.intersystems.com/course/view.php?name=Java%20Build), [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/intersystems.intersystems-iris-single-node), [Google Cloud Platform](https://console.cloud.google.com/marketplace/details/intersystems-launcher/intersystems-iris), or [Amazon Web Services](https://aws.amazon.com/marketplace/pp/B07KVYZYT9).
 
 1) Reset the default passwords
 
