@@ -30,10 +30,9 @@ echo "Creating iris session to load data"
 # get passwd without echoing to terminal
 echo -n "Enter updated _SYSTEM PASSWORD: "; stty -echo; read passwd; stty echo; echo
 
-sed -i -r "s|PASSWORD|$passwd|" $basedir/data/load_data.script
 echo "about to execute load-data.sh"
 # cat ~/Samples-Stock-Data/load_data.script
 # copy files into try-iris container in /tmp/irissys directory
 sudo docker exec $containername mkdir -p $targetdir
 sudo docker cp $basedir/data/. $containername:$targetdir/
-sudo docker exec $containername $targetdir/load_data.sh
+sudo docker exec --env passwd=$passwd $containername $targetdir/load_data.sh
