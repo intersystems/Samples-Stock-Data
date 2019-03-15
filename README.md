@@ -19,11 +19,19 @@ This sample assumes you already have an instance. If you do not yet have one, yo
 	`iris info`
 		This will show the external ip address and ports needed to make connections to InterSystems IRIS
 
-## LOADING DATA: These steps are written for instances running in Google Cloud Platform or Azure
+## LOADING DATA: Using GCP, Azure, or AWS
 
 1) Get the sample data and scripts
 	
 	`iris load https://github.com/intersystems/Samples-Stock-Data`
+
+## LOADING DATA: Using a local instance
+
+1) Clone this repository: `git clone https://github.com/intersystems/Samples-Stock-Data`
+2) Navigate to System Explorer > Classes and import into the USER namespace from the data folder: DemoStockCls.xml, StocksUtil.xml, and TradeAndPersonForHibernate.xml
+3) On the Management Portal home, under Links select Terminal. Run (replace <repo home> with your home directory): 
+	`do ##class(Demo.Stock).LoadData("<repo home>/data/all_stocks_1yr.csv")`
+
 
 ---
 ## TAKE A LOOK AT THE DATA - from the IRIS shell (database user)
